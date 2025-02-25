@@ -1,0 +1,322 @@
+2025-02-25 17:01:27,220 - news_crawler - INFO - 爬虫程序启动
+2025-02-25 17:01:27,221 - news_crawler - INFO - 启动持续采集模式，数据将保存至: data\continuous_news_2025-02-25.csv
+2025-02-25 17:01:27,221 - news_crawler - INFO - 采集间隔: 5.0 分钟
+2025-02-25 17:01:27,221 - news_crawler - INFO - 开始第 1 次采集
+2025-02-25 17:01:27,448 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:01:27,549 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:01:29,732 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:01:29,732 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:01:37,964 - news_crawler - INFO - 页面截图保存至：screenshots\page_state_20250225_170127.png
+2025-02-25 17:01:37,972 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_170127.html
+2025-02-25 17:01:37,972 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:01:37,991 - news_crawler - INFO - 成功保存 186 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:01:38,023 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:01:38,029 - news_crawler - INFO - 第 1 次采集完成，耗时: 10.81 秒
+2025-02-25 17:01:38,030 - news_crawler - INFO - 成功采集 186 条新新闻
+2025-02-25 17:01:38,030 - news_crawler - INFO - 等待 289.19 秒后开始下一次采集，预计时间: 2025-02-25 17:06:27
+2025-02-25 17:02:46,969 - news_crawler - INFO - 爬虫程序结束
+2025-02-25 17:04:05,740 - news_crawler - INFO - 爬虫程序启动
+2025-02-25 17:04:05,740 - news_crawler - INFO - 启动持续采集模式，数据将保存至: data\continuous_news_2025-02-25.csv
+2025-02-25 17:04:05,740 - news_crawler - INFO - 采集间隔: 3.0 分钟
+2025-02-25 17:04:05,740 - news_crawler - INFO - 开始第 1 次采集
+2025-02-25 17:04:05,743 - news_crawler - INFO - 读取到 186 条现有记录用于去重
+2025-02-25 17:04:05,971 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:04:06,097 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:04:07,351 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:04:07,351 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:04:15,430 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_170405.html
+2025-02-25 17:04:15,430 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:04:15,446 - news_crawler - INFO - 成功保存 7 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:04:15,480 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:04:15,486 - news_crawler - INFO - 第 1 次采集完成，耗时: 9.75 秒
+2025-02-25 17:04:15,487 - news_crawler - INFO - 成功采集 7 条新新闻
+2025-02-25 17:04:15,487 - news_crawler - INFO - 等待 170.25 秒后开始下一次采集，预计时间: 2025-02-25 17:07:05
+2025-02-25 17:07:05,750 - news_crawler - INFO - 开始第 2 次采集
+2025-02-25 17:07:05,752 - news_crawler - INFO - 读取到 193 条现有记录用于去重
+2025-02-25 17:07:05,981 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:07:06,082 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:07:07,802 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:07:07,802 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:07:15,894 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_170705.html
+2025-02-25 17:07:15,894 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:07:15,909 - news_crawler - INFO - 成功保存 1 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:07:15,939 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:07:15,946 - news_crawler - INFO - 第 2 次采集完成，耗时: 10.20 秒
+2025-02-25 17:07:15,946 - news_crawler - INFO - 成功采集 1 条新新闻
+2025-02-25 17:07:15,946 - news_crawler - INFO - 等待 169.80 秒后开始下一次采集，预计时间: 2025-02-25 17:10:05
+2025-02-25 17:10:05,756 - news_crawler - INFO - 开始第 3 次采集
+2025-02-25 17:10:05,758 - news_crawler - INFO - 读取到 194 条现有记录用于去重
+2025-02-25 17:10:05,991 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:10:06,096 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:10:07,377 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:10:07,378 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:10:15,448 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_171005.html
+2025-02-25 17:10:15,448 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:10:15,463 - news_crawler - INFO - 成功保存 0 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:10:15,594 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:10:15,601 - news_crawler - INFO - 第 3 次采集完成，耗时: 9.85 秒
+2025-02-25 17:10:15,602 - news_crawler - INFO - 成功采集 0 条新新闻
+2025-02-25 17:10:15,602 - news_crawler - INFO - 等待 170.15 秒后开始下一次采集，预计时间: 2025-02-25 17:13:05
+2025-02-25 17:13:05,772 - news_crawler - INFO - 开始第 4 次采集
+2025-02-25 17:13:05,774 - news_crawler - INFO - 读取到 194 条现有记录用于去重
+2025-02-25 17:13:06,006 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:13:06,105 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:13:07,317 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:13:07,317 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:13:15,387 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_171305.html
+2025-02-25 17:13:15,387 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:13:15,403 - news_crawler - INFO - 成功保存 7 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:13:15,434 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:13:15,441 - news_crawler - INFO - 第 4 次采集完成，耗时: 9.67 秒
+2025-02-25 17:13:15,441 - news_crawler - INFO - 成功采集 7 条新新闻
+2025-02-25 17:13:15,441 - news_crawler - INFO - 等待 170.33 秒后开始下一次采集，预计时间: 2025-02-25 17:16:05
+2025-02-25 17:16:05,780 - news_crawler - INFO - 开始第 5 次采集
+2025-02-25 17:16:05,781 - news_crawler - INFO - 读取到 201 条现有记录用于去重
+2025-02-25 17:16:06,012 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:16:06,113 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:16:07,411 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:16:07,411 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:16:15,494 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_171605.html
+2025-02-25 17:16:15,494 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:16:15,508 - news_crawler - INFO - 成功保存 2 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:16:15,541 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:16:15,547 - news_crawler - INFO - 第 5 次采集完成，耗时: 9.77 秒
+2025-02-25 17:16:15,547 - news_crawler - INFO - 成功采集 2 条新新闻
+2025-02-25 17:16:15,547 - news_crawler - INFO - 等待 170.23 秒后开始下一次采集，预计时间: 2025-02-25 17:19:05
+2025-02-25 17:19:05,792 - news_crawler - INFO - 开始第 6 次采集
+2025-02-25 17:19:05,793 - news_crawler - INFO - 读取到 203 条现有记录用于去重
+2025-02-25 17:19:06,030 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:19:06,137 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:19:07,679 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:19:07,679 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:19:15,751 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_171905.html
+2025-02-25 17:19:15,751 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:19:15,766 - news_crawler - INFO - 成功保存 18 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:19:15,801 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:19:15,808 - news_crawler - INFO - 第 6 次采集完成，耗时: 10.02 秒
+2025-02-25 17:19:15,808 - news_crawler - INFO - 成功采集 18 条新新闻
+2025-02-25 17:19:15,808 - news_crawler - INFO - 等待 169.98 秒后开始下一次采集，预计时间: 2025-02-25 17:22:05
+2025-02-25 17:22:05,805 - news_crawler - INFO - 开始第 7 次采集
+2025-02-25 17:22:05,807 - news_crawler - INFO - 读取到 221 条现有记录用于去重
+2025-02-25 17:22:06,043 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:22:06,148 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:22:07,507 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:22:07,507 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:22:15,611 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_172205.html
+2025-02-25 17:22:15,611 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:22:15,622 - news_crawler - INFO - 成功保存 2 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:22:15,668 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:22:15,676 - news_crawler - INFO - 第 7 次采集完成，耗时: 9.87 秒
+2025-02-25 17:22:15,676 - news_crawler - INFO - 成功采集 2 条新新闻
+2025-02-25 17:22:15,676 - news_crawler - INFO - 等待 170.13 秒后开始下一次采集，预计时间: 2025-02-25 17:25:05
+2025-02-25 17:25:05,814 - news_crawler - INFO - 开始第 8 次采集
+2025-02-25 17:25:05,816 - news_crawler - INFO - 读取到 223 条现有记录用于去重
+2025-02-25 17:25:06,085 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:25:06,195 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:25:07,400 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:25:07,401 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:25:15,490 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_172505.html
+2025-02-25 17:25:15,490 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:25:15,505 - news_crawler - INFO - 成功保存 3 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:25:15,535 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:25:15,541 - news_crawler - INFO - 第 8 次采集完成，耗时: 9.73 秒
+2025-02-25 17:25:15,541 - news_crawler - INFO - 成功采集 3 条新新闻
+2025-02-25 17:25:15,542 - news_crawler - INFO - 等待 170.27 秒后开始下一次采集，预计时间: 2025-02-25 17:28:05
+2025-02-25 17:28:05,824 - news_crawler - INFO - 开始第 9 次采集
+2025-02-25 17:28:05,827 - news_crawler - INFO - 读取到 226 条现有记录用于去重
+2025-02-25 17:28:06,061 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:28:06,172 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:28:07,446 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:28:07,447 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:28:15,535 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_172805.html
+2025-02-25 17:28:15,535 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:28:15,550 - news_crawler - INFO - 成功保存 3 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:28:15,585 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:28:15,591 - news_crawler - INFO - 第 9 次采集完成，耗时: 9.77 秒
+2025-02-25 17:28:15,591 - news_crawler - INFO - 成功采集 3 条新新闻
+2025-02-25 17:28:15,592 - news_crawler - INFO - 等待 170.23 秒后开始下一次采集，预计时间: 2025-02-25 17:31:05
+2025-02-25 17:31:05,836 - news_crawler - INFO - 开始第 10 次采集
+2025-02-25 17:31:05,837 - news_crawler - INFO - 开始清理缓存文件...
+2025-02-25 17:31:05,837 - news_crawler - INFO - 清理 screenshots 目录...
+2025-02-25 17:31:05,837 - news_crawler - INFO - screenshots 目录文件数量 (2) 未超过上限 (100)，无需清理
+2025-02-25 17:31:05,837 - news_crawler - INFO - 清理 html_cache 目录...
+2025-02-25 17:31:05,837 - news_crawler - INFO - html_cache 目录文件数量 (20) 未超过上限 (100)，无需清理
+2025-02-25 17:31:05,837 - news_crawler - INFO - 清理 logs 目录...
+2025-02-25 17:31:05,837 - news_crawler - INFO - logs 目录文件数量 (22) 未超过上限 (100)，无需清理
+2025-02-25 17:31:05,837 - news_crawler - INFO - 缓存文件清理完成
+2025-02-25 17:31:05,837 - news_crawler - INFO - 读取到 229 条现有记录用于去重
+2025-02-25 17:31:06,066 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:31:06,165 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:31:07,548 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:31:07,548 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:31:15,645 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_173105.html
+2025-02-25 17:31:15,645 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:31:15,659 - news_crawler - INFO - 成功保存 2 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:31:15,788 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:31:15,795 - news_crawler - INFO - 第 10 次采集完成，耗时: 9.96 秒
+2025-02-25 17:31:15,795 - news_crawler - INFO - 成功采集 2 条新新闻
+2025-02-25 17:31:15,795 - news_crawler - INFO - 等待 170.04 秒后开始下一次采集，预计时间: 2025-02-25 17:34:05
+2025-02-25 17:34:05,847 - news_crawler - INFO - 开始第 11 次采集
+2025-02-25 17:34:05,849 - news_crawler - INFO - 读取到 231 条现有记录用于去重
+2025-02-25 17:34:06,065 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:34:06,177 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:34:07,411 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:34:07,411 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:34:15,516 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_173405.html
+2025-02-25 17:34:15,516 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:34:15,533 - news_crawler - INFO - 成功保存 4 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:34:15,683 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:34:15,683 - news_crawler - INFO - 第 11 次采集完成，耗时: 9.84 秒
+2025-02-25 17:34:15,683 - news_crawler - INFO - 成功采集 4 条新新闻
+2025-02-25 17:34:15,683 - news_crawler - INFO - 等待 170.16 秒后开始下一次采集，预计时间: 2025-02-25 17:37:05
+2025-02-25 17:37:05,852 - news_crawler - INFO - 开始第 12 次采集
+2025-02-25 17:37:05,852 - news_crawler - INFO - 读取到 235 条现有记录用于去重
+2025-02-25 17:37:06,071 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:37:06,173 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:37:07,476 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:37:07,476 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:37:15,537 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_173705.html
+2025-02-25 17:37:15,546 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:37:15,558 - news_crawler - INFO - 成功保存 0 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:37:15,591 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:37:15,599 - news_crawler - INFO - 第 12 次采集完成，耗时: 9.75 秒
+2025-02-25 17:37:15,599 - news_crawler - INFO - 成功采集 0 条新新闻
+2025-02-25 17:37:15,599 - news_crawler - INFO - 等待 170.25 秒后开始下一次采集，预计时间: 2025-02-25 17:40:05
+2025-02-25 17:40:05,861 - news_crawler - INFO - 开始第 13 次采集
+2025-02-25 17:40:05,861 - news_crawler - INFO - 读取到 235 条现有记录用于去重
+2025-02-25 17:40:06,081 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:40:06,179 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:40:07,416 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:40:07,416 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:40:15,500 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_174005.html
+2025-02-25 17:40:15,500 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:40:15,515 - news_crawler - INFO - 成功保存 1 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:40:15,547 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:40:15,547 - news_crawler - INFO - 第 13 次采集完成，耗时: 9.69 秒
+2025-02-25 17:40:15,547 - news_crawler - INFO - 成功采集 1 条新新闻
+2025-02-25 17:40:15,547 - news_crawler - INFO - 等待 170.31 秒后开始下一次采集，预计时间: 2025-02-25 17:43:05
+2025-02-25 17:43:05,863 - news_crawler - INFO - 开始第 14 次采集
+2025-02-25 17:43:05,865 - news_crawler - INFO - 读取到 236 条现有记录用于去重
+2025-02-25 17:43:06,081 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:43:06,187 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:43:07,746 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:43:07,746 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:43:15,820 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_174305.html
+2025-02-25 17:43:15,820 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:43:15,862 - news_crawler - INFO - 成功保存 10 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:43:15,898 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:43:15,905 - news_crawler - INFO - 第 14 次采集完成，耗时: 10.04 秒
+2025-02-25 17:43:15,905 - news_crawler - INFO - 成功采集 10 条新新闻
+2025-02-25 17:43:15,906 - news_crawler - INFO - 等待 169.96 秒后开始下一次采集，预计时间: 2025-02-25 17:46:05
+2025-02-25 17:46:05,865 - news_crawler - INFO - 开始第 15 次采集
+2025-02-25 17:46:05,865 - news_crawler - INFO - 读取到 246 条现有记录用于去重
+2025-02-25 17:46:06,084 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:46:06,192 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:46:07,416 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:46:07,416 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:46:15,485 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_174605.html
+2025-02-25 17:46:15,485 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:46:15,501 - news_crawler - INFO - 成功保存 6 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:46:15,533 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:46:15,539 - news_crawler - INFO - 第 15 次采集完成，耗时: 9.67 秒
+2025-02-25 17:46:15,539 - news_crawler - INFO - 成功采集 6 条新新闻
+2025-02-25 17:46:15,539 - news_crawler - INFO - 等待 170.33 秒后开始下一次采集，预计时间: 2025-02-25 17:49:05
+2025-02-25 17:49:05,869 - news_crawler - INFO - 开始第 16 次采集
+2025-02-25 17:49:05,869 - news_crawler - INFO - 读取到 252 条现有记录用于去重
+2025-02-25 17:49:06,085 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:49:06,196 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:49:08,918 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:49:08,918 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:49:16,999 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_174905.html
+2025-02-25 17:49:16,999 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:49:17,021 - news_crawler - INFO - 成功保存 19 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:49:17,056 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:49:17,056 - news_crawler - INFO - 第 16 次采集完成，耗时: 11.19 秒
+2025-02-25 17:49:17,056 - news_crawler - INFO - 成功采集 19 条新新闻
+2025-02-25 17:49:17,056 - news_crawler - INFO - 等待 168.81 秒后开始下一次采集，预计时间: 2025-02-25 17:52:05
+2025-02-25 17:52:05,880 - news_crawler - INFO - 开始第 17 次采集
+2025-02-25 17:52:05,883 - news_crawler - INFO - 读取到 271 条现有记录用于去重
+2025-02-25 17:52:06,109 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:52:06,210 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:52:08,114 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:52:08,114 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:52:16,200 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_175205.html
+2025-02-25 17:52:16,200 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:52:16,220 - news_crawler - INFO - 成功保存 1 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:52:16,360 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:52:16,368 - news_crawler - INFO - 第 17 次采集完成，耗时: 10.49 秒
+2025-02-25 17:52:16,368 - news_crawler - INFO - 成功采集 1 条新新闻
+2025-02-25 17:52:16,368 - news_crawler - INFO - 等待 169.51 秒后开始下一次采集，预计时间: 2025-02-25 17:55:05
+2025-02-25 17:55:05,890 - news_crawler - INFO - 开始第 18 次采集
+2025-02-25 17:55:05,893 - news_crawler - INFO - 读取到 272 条现有记录用于去重
+2025-02-25 17:55:06,115 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:55:06,213 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:55:07,462 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:55:07,462 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:55:15,567 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_175505.html
+2025-02-25 17:55:15,567 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:55:15,582 - news_crawler - INFO - 成功保存 0 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:55:15,612 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:55:15,618 - news_crawler - INFO - 第 18 次采集完成，耗时: 9.73 秒
+2025-02-25 17:55:15,618 - news_crawler - INFO - 成功采集 0 条新新闻
+2025-02-25 17:55:15,618 - news_crawler - INFO - 等待 170.27 秒后开始下一次采集，预计时间: 2025-02-25 17:58:05
+2025-02-25 17:58:05,901 - news_crawler - INFO - 开始第 19 次采集
+2025-02-25 17:58:05,903 - news_crawler - INFO - 读取到 272 条现有记录用于去重
+2025-02-25 17:58:06,128 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 17:58:06,228 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 17:58:07,607 - news_crawler - INFO - 页面加载完成
+2025-02-25 17:58:07,607 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 17:58:15,710 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_175805.html
+2025-02-25 17:58:15,711 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 17:58:15,726 - news_crawler - INFO - 成功保存 9 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 17:58:15,761 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 17:58:15,768 - news_crawler - INFO - 第 19 次采集完成，耗时: 9.87 秒
+2025-02-25 17:58:15,768 - news_crawler - INFO - 成功采集 9 条新新闻
+2025-02-25 17:58:15,768 - news_crawler - INFO - 等待 170.13 秒后开始下一次采集，预计时间: 2025-02-25 18:01:05
+2025-02-25 18:01:05,909 - news_crawler - INFO - 开始第 20 次采集
+2025-02-25 18:01:05,909 - news_crawler - INFO - 开始清理缓存文件...
+2025-02-25 18:01:05,909 - news_crawler - INFO - 清理 screenshots 目录...
+2025-02-25 18:01:05,909 - news_crawler - INFO - screenshots 目录文件数量 (2) 未超过上限 (100)，无需清理
+2025-02-25 18:01:05,909 - news_crawler - INFO - 清理 html_cache 目录...
+2025-02-25 18:01:05,910 - news_crawler - INFO - html_cache 目录文件数量 (40) 未超过上限 (100)，无需清理
+2025-02-25 18:01:05,910 - news_crawler - INFO - 清理 logs 目录...
+2025-02-25 18:01:05,911 - news_crawler - INFO - logs 目录文件数量 (42) 未超过上限 (100)，无需清理
+2025-02-25 18:01:05,911 - news_crawler - INFO - 缓存文件清理完成
+2025-02-25 18:01:05,914 - news_crawler - INFO - 读取到 281 条现有记录用于去重
+2025-02-25 18:01:06,141 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 18:01:06,247 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 18:01:07,512 - news_crawler - INFO - 页面加载完成
+2025-02-25 18:01:07,512 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 18:01:15,589 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_180105.html
+2025-02-25 18:01:15,589 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 18:01:15,605 - news_crawler - INFO - 成功保存 1 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 18:01:15,750 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 18:01:15,756 - news_crawler - INFO - 第 20 次采集完成，耗时: 9.85 秒
+2025-02-25 18:01:15,756 - news_crawler - INFO - 成功采集 1 条新新闻
+2025-02-25 18:01:15,756 - news_crawler - INFO - 等待 170.15 秒后开始下一次采集，预计时间: 2025-02-25 18:04:05
+2025-02-25 18:04:05,918 - news_crawler - INFO - 开始第 21 次采集
+2025-02-25 18:04:05,918 - news_crawler - INFO - 读取到 282 条现有记录用于去重
+2025-02-25 18:04:06,148 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 18:04:06,252 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 18:04:07,593 - news_crawler - INFO - 页面加载完成
+2025-02-25 18:04:07,593 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 18:04:15,651 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_180405.html
+2025-02-25 18:04:15,651 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 18:04:15,670 - news_crawler - INFO - 成功保存 2 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 18:04:15,706 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 18:04:15,712 - news_crawler - INFO - 第 21 次采集完成，耗时: 9.79 秒
+2025-02-25 18:04:15,712 - news_crawler - INFO - 成功采集 2 条新新闻
+2025-02-25 18:04:15,713 - news_crawler - INFO - 等待 170.21 秒后开始下一次采集，预计时间: 2025-02-25 18:07:05
+2025-02-25 18:07:05,931 - news_crawler - INFO - 开始第 22 次采集
+2025-02-25 18:07:05,933 - news_crawler - INFO - 读取到 284 条现有记录用于去重
+2025-02-25 18:07:06,154 - news_crawler - INFO - 开始新闻爬取流程
+2025-02-25 18:07:06,256 - news_crawler - INFO - 访问URL: https://newsnow.busiyi.world/c/hottest
+2025-02-25 18:07:07,514 - news_crawler - INFO - 页面加载完成
+2025-02-25 18:07:07,514 - news_crawler - INFO - 滚动页面加载更多内容
+2025-02-25 18:07:15,622 - news_crawler - INFO - HTML内容保存至：html_cache\page_content_20250225_180705.html
+2025-02-25 18:07:15,622 - news_crawler - INFO - 提取新闻数据...
+2025-02-25 18:07:15,637 - news_crawler - INFO - 成功保存 0 条新闻数据到: data\continuous_news_2025-02-25.csv
+2025-02-25 18:07:15,766 - news_crawler - INFO - 浏览器已关闭
+2025-02-25 18:07:15,772 - news_crawler - INFO - 第 22 次采集完成，耗时: 9.84 秒
+2025-02-25 18:07:15,772 - news_crawler - INFO - 成功采集 0 条新新闻
+2025-02-25 18:07:15,772 - news_crawler - INFO - 等待 170.16 秒后开始下一次采集，预计时间: 2025-02-25 18:10:05
