@@ -1,0 +1,351 @@
+{% extends "base.html" %}
+
+{% block title %}主题聚类 - 新闻分析系统{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-4">
+            <div class="card-header bg-warning text-dark d-flex justify-content-between align-items-center">
+                <h2 class="mb-0">主题聚类</h2>
+                <div>
+                    <button id="run-clustering-btn" class="btn btn-primary">
+                        <i class="bi bi-play-fill"></i> 运行聚类
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <p>通过机器学习算法，对新闻进行主题聚类，发现新闻的主题结构。</p>
+                
+                <div id="clustering-status" class="alert alert-info" style="display: none;">
+                    <i class="bi bi-info-circle-fill"></i> <span id="status-message">正在加载聚类结果...</span>
+                </div>
+                
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header bg-primary text-white">
+                                <h3 class="mb-0">聚类可视化</h3>
+                            </div>
+                            <div class="card-body text-center">
+                                <div id="visualization-container">
+                                    <img id="cluster-visualization" src="/api/visualization/clusters_2d.png" class="img-fluid" alt="聚类可视化" style="max-height: 400px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header bg-success text-white">
+                                <h3 class="mb-0">聚类统计</h3>
+                            </div>
+                            <div class="card-body">
+                                <div id="cluster-stats-chart" style="width: 100%; height: 400px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" id="clusters-container">
+    <!-- 聚类结果将通过JavaScript动态生成 -->
+    <div class="col-12 text-center py-5">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">加载中...</span>
+        </div>
+        <p class="mt-2">加载聚类结果中...</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // 全局变量
+    let clusteringData = null;
+    
+    // 页面加载完成后执行
+    $(document).ready(function() {
+        // 加载聚类数据
+        loadClusteringData();
+        
+        // 运行聚类按钮点击事件
+        $('#run-clustering-btn').on('click', function() {
+            runClustering();
+        });
+    });
+    
+    // 加载聚类数据
+    function loadClusteringData() {
+        $.ajax({
+            url: '/api/topic_clustering',
+            method: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                if (response.success) {
+                    clusteringData = response.data;
+                    renderClusters();
+                    renderClusterStats();
+                    
+                    // 刷新图片（避免缓存）
+                    const timestamp = new Date().getTime();
+                    $('#cluster-visualization').attr('src', '/api/visualization/clusters_2d.png?' + timestamp);
+                    
+                    // 隐藏加载提示
+                    $('#clusters-container').find('.spinner-border').parent().hide();
+                } else {
+                    // 显示错误信息
+                    $('#clustering-status').removeClass('alert-info').addClass('alert-warning').show();
+                    $('#status-message').text('未找到聚类结果，请点击"运行聚类"按钮生成聚类。');
+                    $('#clusters-container').html('<div class="col-12 text-center py-5"><p>未找到聚类结果</p></div>');
+                }
+            },
+            error: function(xhr) {
+                // 显示错误信息
+                $('#clustering-status').removeClass('alert-info').addClass('alert-danger').show();
+                $('#status-message').text('获取聚类数据出错：' + xhr.statusText);
+                $('#clusters-container').html('<div class="col-12 text-center py-5"><p>加载聚类结果失败</p></div>');
+            }
+        });
+    }
+    
+    // 运行聚类
+    function runClustering() {
+        // 显示状态信息
+        $('#clustering-status').removeClass('alert-warning alert-danger').addClass('alert-info').show();
+        $('#status-message').text('正在执行聚类，这可能需要几分钟时间...');
+        
+        // 禁用按钮
+        $('#run-clustering-btn').prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> 处理中...');
+        
+        // 发送请求
+        $.ajax({
+            url: '/api/run_topic_clustering',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                n_clusters: 10,
+                max_features: 1000,
+                reduction_method: 'pca'
+            }),
+            success: function(response) {
+                if (response.success) {
+                    // 显示成功信息
+                    $('#clustering-status').removeClass('alert-info').addClass('alert-success');
+                    $('#status-message').text('聚类完成！正在加载结果...');
+                    
+                    // 重新加载聚类数据
+                    setTimeout(function() {
+                        loadClusteringData();
+                        
+                        // 刷新图片（避免缓存）
+                        const timestamp = new Date().getTime();
+                        $('#cluster-visualization').attr('src', '/api/visualization/clusters_2d.png?' + timestamp);
+                    }, 1000);
+                } else {
+                    // 显示错误信息
+                    $('#clustering-status').removeClass('alert-info').addClass('alert-danger');
+                    $('#status-message').text('聚类失败：' + (response.error || '未知错误'));
+                }
+                
+                // 启用按钮
+                $('#run-clustering-btn').prop('disabled', false).html('<i class="bi bi-play-fill"></i> 运行聚类');
+            },
+            error: function(xhr) {
+                // 显示错误信息
+                $('#clustering-status').removeClass('alert-info').addClass('alert-danger');
+                $('#status-message').text('聚类请求出错：' + xhr.statusText);
+                
+                // 启用按钮
+                $('#run-clustering-btn').prop('disabled', false).html('<i class="bi bi-play-fill"></i> 运行聚类');
+            }
+        });
+    }
+    
+    // 渲染聚类结果
+    function renderClusters() {
+        if (!clusteringData) return;
+        
+        let html = '';
+        
+        // 获取聚类ID并排序
+        const clusterIds = Object.keys(clusteringData).sort((a, b) => {
+            // 将"noise"放在最后
+            if (a === 'noise') return 1;
+            if (b === 'noise') return -1;
+            return parseInt(a) - parseInt(b);
+        });
+        
+        // 遍历每个聚类
+        clusterIds.forEach(function(clusterId) {
+            const cluster = clusteringData[clusterId];
+            const clusterSize = cluster.size || 0;
+            
+            // 获取关键词
+            let keywords = '';
+            if (cluster.keywords && Array.isArray(cluster.keywords)) {
+                keywords = cluster.keywords.map(k => k.word || k).join(', ');
+            }
+            
+            // 生成聚类卡片
+            html += `
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header ${clusterId === 'noise' ? 'bg-secondary' : 'bg-info'} text-white d-flex justify-content-between align-items-center">
+                            <h3 class="mb-0">
+                                ${clusterId === 'noise' ? '噪声/未分类' : '主题 ' + clusterId}
+                                <span class="badge bg-light text-dark ms-2">${clusterSize} 条新闻</span>
+                            </h3>
+                            <button class="btn btn-sm btn-light toggle-cluster-btn" data-cluster="${clusterId}">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <strong>关键词：</strong> ${keywords}
+                            </div>
+                            
+                            <div class="cluster-news-list" id="cluster-${clusterId}-news" style="display: none;">
+                                <hr>
+                                <h4>新闻列表</h4>
+                                <div class="list-group">
+            `;
+            
+            // 添加新闻列表
+            if (cluster.news && Array.isArray(cluster.news)) {
+                cluster.news.forEach(function(news, index) {
+                    if (index < 10) { // 只显示前10条
+                        html += `
+                            <div class="list-group-item">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">${news.title || '无标题'}</h5>
+                                    <small>ID: ${news.news_id || index}</small>
+                                </div>
+                            </div>
+                        `;
+                    } else if (index === 10) {
+                        html += `
+                            <div class="list-group-item text-center">
+                                <button class="btn btn-sm btn-outline-primary load-more-btn" data-cluster="${clusterId}">
+                                    加载更多 (${clusterSize - 10} 条)
+                                </button>
+                            </div>
+                        `;
+                    }
+                });
+            } else {
+                html += `<div class="list-group-item">无新闻数据</div>`;
+            }
+            
+            html += `
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        
+        // 更新DOM
+        $('#clusters-container').html(html);
+        
+        // 绑定展开/折叠事件
+        $('.toggle-cluster-btn').on('click', function() {
+            const clusterId = $(this).data('cluster');
+            const $newsList = $(`#cluster-${clusterId}-news`);
+            const $icon = $(this).find('i');
+            
+            if ($newsList.is(':visible')) {
+                $newsList.slideUp();
+                $icon.removeClass('bi-chevron-up').addClass('bi-chevron-down');
+            } else {
+                $newsList.slideDown();
+                $icon.removeClass('bi-chevron-down').addClass('bi-chevron-up');
+            }
+        });
+        
+        // 绑定加载更多事件
+        $('.load-more-btn').on('click', function() {
+            const clusterId = $(this).data('cluster');
+            // 这里可以实现加载更多的逻辑
+            $(this).text('加载中...').prop('disabled', true);
+            
+            // 模拟加载
+            setTimeout(() => {
+                $(this).parent().text('已加载全部数据');
+            }, 1000);
+        });
+    }
+    
+    // 渲染聚类统计图表
+    function renderClusterStats() {
+        if (!clusteringData) return;
+        
+        // 准备图表数据
+        const clusterIds = Object.keys(clusteringData).sort((a, b) => {
+            if (a === 'noise') return 1;
+            if (b === 'noise') return -1;
+            return parseInt(a) - parseInt(b);
+        });
+        
+        const clusterNames = clusterIds.map(id => id === 'noise' ? '噪声/未分类' : '主题 ' + id);
+        const clusterSizes = clusterIds.map(id => clusteringData[id].size || 0);
+        
+        // 初始化图表
+        const chart = echarts.init(document.getElementById('cluster-stats-chart'));
+        
+        // 配置图表
+        const option = {
+            tooltip: {
+                trigger: 'item',
+                formatter: '{a} <br/>{b}: {c} ({d}%)'
+            },
+            legend: {
+                orient: 'vertical',
+                right: 10,
+                top: 'center',
+                data: clusterNames
+            },
+            series: [
+                {
+                    name: '聚类分布',
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    avoidLabelOverlap: false,
+                    itemStyle: {
+                        borderRadius: 10,
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    },
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            fontSize: '18',
+                            fontWeight: 'bold'
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data: clusterNames.map((name, index) => {
+                        return {
+                            value: clusterSizes[index],
+                            name: name
+                        };
+                    })
+                }
+            ]
+        };
+        
+        // 渲染图表
+        chart.setOption(option);
+    }
+</script>
+{% endblock %} 

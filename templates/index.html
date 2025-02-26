@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+
+{% block title %}首页 - 新闻分析系统{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">新闻分析系统</h2>
+            </div>
+            <div class="card-body">
+                <p class="lead">欢迎使用新闻分析系统，本系统提供新闻数据的分词、词频统计和主题聚类功能。</p>
+                <p>通过本系统，您可以：</p>
+                <ul>
+                    <li>查看新闻分词结果，了解文本处理效果</li>
+                    <li>分析词频统计，掌握热门词汇分布</li>
+                    <li>探索主题聚类，发现新闻主题结构</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-info text-white">
+                <h3 class="mb-0">分词结果</h3>
+            </div>
+            <div class="card-body">
+                <p>查看新闻标题的分词处理结果，包括词性标注和词频统计。</p>
+                <p>分词是文本分析的基础，通过将文本切分为单词，为后续分析提供支持。</p>
+            </div>
+            <div class="card-footer">
+                <a href="/segmentation" class="btn btn-info text-white">查看分词结果</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-success text-white">
+                <h3 class="mb-0">词频统计</h3>
+            </div>
+            <div class="card-body">
+                <p>分析新闻标题中词汇的出现频率，了解热门话题和关键词。</p>
+                <p>词频统计可以帮助我们发现文本中的重要信息和热点话题。</p>
+            </div>
+            <div class="card-footer">
+                <a href="/word_frequency" class="btn btn-success">查看词频统计</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+                <h3 class="mb-0">主题聚类</h3>
+            </div>
+            <div class="card-body">
+                <p>通过机器学习算法，对新闻进行主题聚类，发现新闻的主题结构。</p>
+                <p>主题聚类可以帮助我们理解新闻的分布和关联，发现潜在的主题模式。</p>
+            </div>
+            <div class="card-footer">
+                <a href="/topic_clustering" class="btn btn-warning text-dark">查看主题聚类</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-secondary text-white">
+                <h3 class="mb-0">数据概览</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <div class="card bg-light">
+                            <div class="card-body text-center">
+                                <h4 class="card-title">新闻数量</h4>
+                                <p class="display-4" id="news-count">--</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card bg-light">
+                            <div class="card-body text-center">
+                                <h4 class="card-title">词汇数量</h4>
+                                <p class="display-4" id="word-count">--</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card bg-light">
+                            <div class="card-body text-center">
+                                <h4 class="card-title">主题数量</h4>
+                                <p class="display-4" id="topic-count">--</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card bg-light">
+                            <div class="card-body text-center">
+                                <h4 class="card-title">平均词长</h4>
+                                <p class="display-4" id="avg-word-length">--</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    $(document).ready(function() {
+        // 获取分词数据
+        $.ajax({
+            url: '/api/segmentation',
+            method: 'GET',
+            success: function(response) {
+                if (response.success) {
+                    $('#news-count').text(response.total);
+                }
+            }
+        });
+        
+        // 获取词频统计数据
+        $.ajax({
+            url: '/api/word_frequency',
+            method: 'GET',
+            success: function(response) {
+                if (response.success) {
+                    $('#word-count').text(response.total);
+                    
+                    // 计算平均词长
+                    let totalLength = 0;
+                    let wordCount = 0;
+                    
+                    response.data.forEach(function(item) {
+                        totalLength += item.word.length * item.frequency;
+                        wordCount += item.frequency;
+                    });
+                    
+                    const avgLength = (totalLength / wordCount).toFixed(1);
+                    $('#avg-word-length').text(avgLength);
+                }
+            }
+        });
+        
+        // 获取主题聚类数据
+        $.ajax({
+            url: '/api/topic_clustering',
+            method: 'GET',
+            success: function(response) {
+                if (response.success) {
+                    const topicCount = Object.keys(response.data).length;
+                    $('#topic-count').text(topicCount);
+                }
+            },
+            error: function() {
+                $('#topic-count').text('0');
+            }
+        });
+    });
+</script>
+{% endblock %} 

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>词频统计 - 新闻分析系统</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        .search-box {
+            margin-bottom: 20px;
+        }
+        .pos-filter {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="/">新闻分析系统</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/segmentation">分词结果</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/word_frequency">词频统计</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/topic_clustering">主题聚类</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 class="mb-4">词频统计</h1>
+        
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                词频统计
+            </div>
+            <div class="card-body">
+                <p>以下是新闻标题中词汇的出现频率统计，可以帮助我们了解热门话题和关键词。</p>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="search-box">
+                            <div class="input-group">
+                                <input type="text" id="searchInput" class="form-control" placeholder="搜索词汇...">
+                                <button class="btn btn-outline-success" type="button" id="searchBtn">搜索</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="pos-filter">
+                            <select id="posFilter" class="form-select">
+                                <option value="all">全部词性</option>
+                                <option value="n">名词(n)</option>
+                                <option value="v">动词(v)</option>
+                                <option value="a">形容词(a)</option>
+                                <option value="d">副词(d)</option>
+                                <option value="nr">人名(nr)</option>
+                                <option value="ns">地名(ns)</option>
+                                <option value="nt">机构名(nt)</option>
+                                <option value="nz">其他专名(nz)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead class="table-success">
+                            <tr>
+                                <th>排名</th>
+                                <th>词汇</th>
+                                <th>词性</th>
+                                <th>频率</th>
+                                <th>百分比</th>
+                                <th>累计百分比</th>
+                            </tr>
+                        </thead>
+                        <tbody id="wordFrequencyTable">
+                            <!-- 数据将通过JavaScript动态加载 -->
+                            <tr>
+                                <td colspan="6" class="text-center">加载中...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 加载词频数据
+            loadWordFrequencyData();
+            
+            // 搜索按钮点击事件
+            document.getElementById('searchBtn').addEventListener('click', function() {
+                filterWordFrequencyTable();
+            });
+            
+            // 搜索框回车事件
+            document.getElementById('searchInput').addEventListener('keyup', function(event) {
+                if (event.key === 'Enter') {
+                    filterWordFrequencyTable();
+                }
+            });
+            
+            // 词性筛选事件
+            document.getElementById('posFilter').addEventListener('change', function() {
+                filterWordFrequencyTable();
+            });
+        });
+        
+        // 加载词频数据
+        function loadWordFrequencyData() {
+            fetch('/api/word_frequency?limit=500')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        displayWordFrequencyData(data.data);
+                    } else {
+                        document.getElementById('wordFrequencyTable').innerHTML = 
+                            `<tr><td colspan="6" class="text-center text-danger">加载失败: ${data.error}</td></tr>`;
+                    }
+                })
+                .catch(error => {
+                    console.error('获取词频数据出错:', error);
+                    document.getElementById('wordFrequencyTable').innerHTML = 
+                        `<tr><td colspan="6" class="text-center text-danger">加载失败: ${error.message}</td></tr>`;
+                });
+        }
+        
+        // 显示词频数据
+        function displayWordFrequencyData(data) {
+            const tableBody = document.getElementById('wordFrequencyTable');
+            
+            if (!data || data.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="6" class="text-center">暂无数据</td></tr>';
+                return;
+            }
+            
+            // 计算累计百分比
+            let cumulativePercentage = 0;
+            const rows = data.map((item, index) => {
+                // 使用percentage_str字段，如果不存在则使用percentage字段格式化
+                const percentStr = item.percentage_str || (item.percentage ? `${item.percentage.toFixed(2)}%` : 'N/A');
+                
+                // 累计百分比
+                cumulativePercentage += parseFloat(item.percentage || 0);
+                
+                return `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${item.word}</td>
+                        <td>${item.pos || 'undefined'}</td>
+                        <td>${item.frequency}</td>
+                        <td>${percentStr}</td>
+                        <td>${cumulativePercentage.toFixed(2)}%</td>
+                    </tr>
+                `;
+            }).join('');
+            
+            tableBody.innerHTML = rows;
+            
+            // 存储原始数据用于筛选
+            window.originalWordFrequencyData = data;
+        }
+        
+        // 筛选词频表
+        function filterWordFrequencyTable() {
+            const searchText = document.getElementById('searchInput').value.toLowerCase();
+            const posFilter = document.getElementById('posFilter').value;
+            
+            if (!window.originalWordFrequencyData) {
+                return;
+            }
+            
+            const filteredData = window.originalWordFrequencyData.filter(item => {
+                const matchesSearch = !searchText || item.word.toLowerCase().includes(searchText);
+                const matchesPos = posFilter === 'all' || (item.pos && item.pos.startsWith(posFilter));
+                return matchesSearch && matchesPos;
+            });
+            
+            // 重新计算累计百分比
+            let cumulativePercentage = 0;
+            const tableBody = document.getElementById('wordFrequencyTable');
+            
+            if (filteredData.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="6" class="text-center">没有匹配的数据</td></tr>';
+                return;
+            }
+            
+            const rows = filteredData.map((item, index) => {
+                // 使用percentage_str字段，如果不存在则使用percentage字段格式化
+                const percentStr = item.percentage_str || (item.percentage ? `${item.percentage.toFixed(2)}%` : 'N/A');
+                
+                // 累计百分比
+                cumulativePercentage += parseFloat(item.percentage || 0);
+                
+                return `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${item.word}</td>
+                        <td>${item.pos || 'undefined'}</td>
+                        <td>${item.frequency}</td>
+                        <td>${percentStr}</td>
+                        <td>${cumulativePercentage.toFixed(2)}%</td>
+                    </tr>
+                `;
+            }).join('');
+            
+            tableBody.innerHTML = rows;
+        }
+    </script>
+</body>
+</html> 

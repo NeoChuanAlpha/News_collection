@@ -1,0 +1,17 @@
+2025-02-26 10:39:34,584 - INFO - 加载分词数据: word_segmentation/segmented_news_2025-02-25.csv
+2025-02-26 10:39:34,595 - INFO - 准备文本向量化
+2025-02-26 10:39:34,613 - INFO - 有效文本数量: 884/884
+2025-02-26 10:39:34,613 - INFO - 文本向量化，最大特征数: 1000
+2025-02-26 10:39:34,613 - INFO - 有效文本数量: 884
+2025-02-26 10:39:34,613 - INFO - 向量化完成，形状: (884, 1000)
+2025-02-26 10:39:34,613 - INFO - K-means聚类，聚类数: 10
+2025-02-26 10:39:34,714 - INFO - K-means聚类完成
+2025-02-26 10:39:34,714 - INFO - 提取每个聚类的前10个关键词
+2025-02-26 10:39:34,715 - INFO - 关键词提取完成
+2025-02-26 10:39:34,715 - INFO - 使用pca进行降维到2维
+2025-02-26 10:39:34,725 - INFO - 降维完成，形状: (884, 2)
+2025-02-26 10:39:34,928 - INFO - 已保存聚类可视化: word_segmentation/visualization\clusters_2d.png
+2025-02-26 10:39:34,929 - INFO - 生成聚类结果数据
+2025-02-26 10:39:34,933 - INFO - 聚类结果数据生成完成，共10个聚类
+2025-02-26 10:39:34,942 - INFO - 已保存聚类结果数据: word_segmentation/visualization\cluster_data.json
+2025-02-26 10:39:34,942 - INFO - 主题聚类处理完成: {'visualization_path': 'word_segmentation/visualization\\clusters_2d.png', 'data_path': 'word_segmentation/visualization\\cluster_data.json', 'cluster_count': 10, 'news_count': 884}

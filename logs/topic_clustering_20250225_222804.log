@@ -1,0 +1,28 @@
+2025-02-25 22:28:04,728 - INFO - 未找到聚类结果，尝试执行主题聚类...
+2025-02-25 22:28:04,728 - INFO - 加载分词数据: word_segmentation/segmented_news_2025-02-25.csv
+2025-02-25 22:28:04,732 - INFO - 准备文本向量化
+2025-02-25 22:28:04,735 - INFO - 有效文本数量: 570/570
+2025-02-25 22:28:04,736 - INFO - 文本向量化，最大特征数: 1000
+2025-02-25 22:28:04,736 - INFO - 有效文本数量: 570
+2025-02-25 22:28:04,741 - INFO - 向量化完成，形状: (570, 1000)
+2025-02-25 22:28:04,741 - INFO - K-means聚类，聚类数: 10
+2025-02-25 22:28:04,849 - INFO - K-means聚类完成
+2025-02-25 22:28:04,849 - INFO - 提取每个聚类的前10个关键词
+2025-02-25 22:28:04,850 - INFO - 关键词提取完成
+2025-02-25 22:28:04,850 - INFO - 使用pca进行降维到2维
+2025-02-25 22:28:04,899 - INFO - 降维完成，形状: (570, 2)
+2025-02-25 22:28:05,153 - INFO - 已保存聚类可视化: word_segmentation/visualization\clusters_2d.png
+2025-02-25 22:28:05,153 - INFO - 生成聚类结果数据
+2025-02-25 22:28:05,162 - INFO - 聚类结果数据生成完成，共10个聚类
+2025-02-25 22:28:05,168 - INFO - 已保存聚类结果数据: word_segmentation/visualization\cluster_data.json
+2025-02-25 22:28:05,169 - INFO - 主题聚类处理完成: {'visualization_path': 'word_segmentation/visualization\\clusters_2d.png', 'data_path': 'word_segmentation/visualization\\cluster_data.json', 'cluster_count': 10, 'news_count': 570}
+2025-02-25 22:28:05,192 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.88:5000
+2025-02-25 22:28:05,192 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-25 22:28:05,195 - INFO -  * Restarting with stat
+2025-02-26 10:28:45,959 - INFO -  * Restarting with stat
+2025-02-26 10:29:09,493 - INFO -  * Restarting with stat
+2025-02-26 10:29:28,308 - INFO -  * Restarting with stat
+2025-02-26 10:29:54,027 - INFO -  * Restarting with stat

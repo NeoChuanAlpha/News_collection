@@ -1,0 +1,21 @@
+2025-02-26 10:39:24,635 - INFO - 已创建默认停用词文件: word_segmentation/stopwords.txt, 共 85 个停用词
+2025-02-26 10:39:24,635 - INFO - 已创建自定义词典文件: word_segmentation/custom_dict.txt, 共 71 个词条
+2025-02-26 10:39:24,635 - DEBUG - Building prefix dict from the default dictionary ...
+2025-02-26 10:39:24,635 - DEBUG - Loading model from cache C:\Users\neo\AppData\Local\Temp\jieba.cache
+2025-02-26 10:39:25,011 - DEBUG - Loading model cost 0.376 seconds.
+2025-02-26 10:39:25,011 - DEBUG - Prefix dict has been built successfully.
+2025-02-26 10:39:25,027 - INFO - 已加载自定义词典: word_segmentation/custom_dict.txt
+2025-02-26 10:39:25,027 - INFO - 已加载停用词 85 个
+2025-02-26 10:39:25,027 - INFO - 已读取CSV文件: data/continuous_news_2025-02-25.csv, 共 884 条记录
+2025-02-26 10:39:25,090 - INFO - 已处理 100 条记录
+2025-02-26 10:39:25,142 - INFO - 已处理 200 条记录
+2025-02-26 10:39:25,200 - INFO - 已处理 300 条记录
+2025-02-26 10:39:25,268 - INFO - 已处理 400 条记录
+2025-02-26 10:39:25,336 - INFO - 已处理 500 条记录
+2025-02-26 10:39:25,394 - INFO - 已处理 600 条记录
+2025-02-26 10:39:25,470 - INFO - 已处理 700 条记录
+2025-02-26 10:39:25,552 - INFO - 已处理 800 条记录
+2025-02-26 10:39:25,615 - INFO - 分词结果已保存到: word_segmentation/segmented_news_2025-02-25.csv, 共 884 条记录
+2025-02-26 10:39:25,647 - INFO - 词频统计已保存到: word_segmentation/word_frequency_2025-02-25.csv, 共 3046 个不同词汇
+2025-02-26 10:39:25,671 - INFO - 已更新动态词典，添加 405 个新词到 word_segmentation/dynamic_dict.txt
+2025-02-26 10:39:25,678 - INFO - 分词处理完成
